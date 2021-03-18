@@ -2,13 +2,17 @@ const { OrderListService } = require('../services/OrderListService');
 
 class OrderListController {
   async create(request, response) {
-    const { listas } = request.body;
+    try {
+      const { listas } = request.body;
 
-    const orderListService = new OrderListService();
+      const orderListService = new OrderListService();
 
-    const list = await orderListService.execute(listas);
+      const list = await orderListService.execute(listas);
 
-    response.json(list);
+      response.json(list);
+    } catch (err) {
+      return response.json(err.message);
+    }
   }
 }
 

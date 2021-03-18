@@ -3,8 +3,14 @@ class InterlaceService {
     let interlace;
     let resp;
 
-    intervaloA = intervaloA.split(',').map((inter) => inter.trim());
-    intervaloB = intervaloB.split(',').map((inter) => inter.trim());
+    if (!intervaloA || !intervaloB) {
+      throw new Error('Ambas intervalos devem ser preenchidos');
+    }
+
+    if (typeof intervaloA === 'string') {
+      intervaloA = intervaloA.split(',').map((inter) => inter.trim());
+      intervaloB = intervaloB.split(',').map((inter) => inter.trim());
+    }
 
     const inicioIntervaloA = intervaloA[0];
     const fimIntervaloA = intervaloA[1];

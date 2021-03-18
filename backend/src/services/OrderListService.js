@@ -2,6 +2,10 @@ class OrderListService {
   async execute(listas) {
     const { salaN, salaS } = listas;
 
+    if (!salaN || !salaS) {
+      throw new Error('Ambas as salas devem ser preenchidas');
+    }
+
     const sala1 = salaN
       .split(',')
       .map((num) => num.trim())

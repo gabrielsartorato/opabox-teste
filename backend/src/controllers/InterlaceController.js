@@ -2,16 +2,21 @@ const { InterlaceService } = require('../services/InterlaceService');
 
 class InterlaceController {
   async show(request, response) {
-    const { intervaloA, intervaloB } = request.query;
+    try {
+      const { intervaloA, intervaloB } =
+        request.query === {} ? request.query : request.body;
 
-    const interlaceService = new InterlaceService();
+      const interlaceService = new InterlaceService();
 
-    const { interlace, resp } = await interlaceService.excute(
-      intervaloA,
-      intervaloB,
-    );
+      const { interlace, resp } = await interlaceService.excute(
+        intervaloA,
+        intervaloB,
+      );
 
-    return response.json({ interlace, resp });
+      return response.json({ interlace, resp });
+    } catch (err) {
+      return response.json(err.message);
+    }
   }
 }
 
