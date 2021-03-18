@@ -52,8 +52,7 @@ Como retorno será recebido às listas ordenadas:
 ```json 
   {
     "salaN": [1, 5, 7, 8],
-    "salaS": ["a", "n", "p","x"
-    ]
+    "salaS": ["a", "n", "p","x"]
   }
 ```
 
