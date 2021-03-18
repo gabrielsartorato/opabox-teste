@@ -12,9 +12,9 @@ Após fazer o clone siga os passos abaixos para execução do backend e fronted.
 
 ## Backend
 
-Para executar o backend faça os seguinter passos:
+Para executar o backend faça os seguintes passos:
 
-1 - Ainda no terminal, entre no diretório do backend:
+1 - Ainda no terminal, entre dentro do diretório backend:
 
 ```bash
   cd backend
@@ -87,7 +87,7 @@ Como retorno será recebido o seguinte json:
 
 ## Frontend
 
-Para executar o backend faça os seguinter passos:
+Para executar o fronted faça os seguintes passos:
 
 1 - Entre no diretório do frontend:
 
